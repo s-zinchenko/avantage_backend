@@ -120,8 +120,12 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 MEDIA_ROOT = env("MEDIA_ROOT", default=os.path.join(BASE_DIR, "media"))
 MEDIA_URL = "/media/"
 
-STATIC_URL = "/dj_static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+# STATIC_URL = "/dj_static/"
+# STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATIC_URL = 'static/'
+
+STATIC_ROOT = '/home/r/raigoreg/raigoreg.beget.tech/public_html/static'
 
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
