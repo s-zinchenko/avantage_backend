@@ -1,5 +1,6 @@
 import os
 from email.policy import default
+from logging.handlers import SysLogHandler
 
 import environ
 from django.db.models import BigAutoField, FileField as DbFileField
@@ -135,29 +136,49 @@ STATICFILES_FINDERS = (
 # if not DEBUG:
 # if env.bool("LOGGING_PATH", default=False):
 LOGGING = {
-    "version": 1,
-    "disable_existing_loggers": False,
-    "formatters": {
-        "verbose": {
-            "format": "LEVEL:%(levelname)s "
-            "TIME:%(asctime)s MESSAGE:%(message)s"
+    'version': 1,
+    'disable_existing_loggers': False,
+    'filters': {
+        'require_debug_false': {
+            '()': 'django.utils.log.RequireDebugFalse'
+        }
+    },
+    'formatters': {
+        'verbose': {
+            'format': '[contactor] %(levelname)s %(asctime)s %(message)s'
         },
     },
-    "handlers": {
-        "file": {
+    'handlers': {
+        # Send all messages to console
+        'console': {
+            'level': 'DEBUG',
+            'class': 'logging.StreamHandler',
+        },
+        # Send info messages to syslog
+        'syslog':{
+            'level':'INFO',
+            'class': 'logging.handlers.SysLogHandler',
+            'facility': SysLogHandler.LOG_LOCAL2,
+            'address': '/dev/log',
+            'formatter': 'verbose',
+        },
+        # Warning messages are sent to admin emails
+        # critical errors are logged to sentry
+        'sentry': {
             "level": "ERROR",
             "class": "logging.FileHandler",
             "filename": env.str("LOGGING_PATH"),
             "formatter": "verbose",
-        }
+        },
     },
-    "loggers": {
-        "django": {
-            "handlers": ["file"],
-            "level": "ERROR",
-            "propagate": True,
-        }
-    },
+    'loggers': {
+        # This is the "catch all" logger
+        '': {
+            'handlers': ['console', 'syslog', 'mail_admins', 'sentry'],
+            'level': 'DEBUG',
+            'propagate': False,
+        },
+    }
 }
 
 SERIALIZER_FIELD_MAPPING = {
