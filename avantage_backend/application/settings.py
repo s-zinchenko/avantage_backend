@@ -83,7 +83,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "avantage_backend.application.wsgi.application"
+WSGI_APPLICATION = "avantage_backend.application.passenger_wsgi.application"
 
 DATABASES = {
     "default": {
