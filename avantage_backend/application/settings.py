@@ -90,7 +90,7 @@ DATABASES = {
     "default": {
         # "ENGINE": "django.db.backends.mysql",
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": env.str("DATABASE_NAME", default="admin"),
+        "NAME": "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_admin",
         # "USER": env.str("DATABASE_USER", default="admin"),
         # "PASSWORD": env.str("DATABASE_PASSWORD", default="admin"),
         # "HOST": env.str("DATABASE_HOST", default="admin"),
