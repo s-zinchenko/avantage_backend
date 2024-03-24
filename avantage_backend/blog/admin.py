@@ -1,0 +1,26 @@
+from django.contrib import admin
+
+from avantage_backend.blog.forms import ValidateShowOnMainPageFormset
+from avantage_backend.blog.models import Article, Case, Customer, CaseAttachment
+
+
+@admin.register(Customer)
+class CustomerAdmin(admin.ModelAdmin):
+    pass
+
+
+class CaseAttachmentInlineAdmin(admin.TabularInline):
+    model = CaseAttachment
+    formset = ValidateShowOnMainPageFormset
+
+
+@admin.register(Article)
+class ArticleAdmin(admin.ModelAdmin):
+    pass
+
+
+@admin.register(Case)
+class CaseAdmin(admin.ModelAdmin):
+    inlines = [
+        CaseAttachmentInlineAdmin,
+    ]

@@ -1,0 +1,12 @@
+[flake8]
+exclude =
+    .git,
+    __pycache__,
+    env,
+    .kube,
+    docker,
+    local,
+    requirements,
+    */migrations/*.py
+max-line-length = 120
+ignore = F541, Q001, Q003
