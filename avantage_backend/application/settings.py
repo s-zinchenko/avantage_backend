@@ -132,33 +132,33 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )
 
-if not DEBUG:
-    if env.bool("LOGGING_PATH", default=False):
-        LOGGING = {
-            "version": 1,
-            "disable_existing_loggers": True,
-            "formatters": {
-                "verbose": {
-                    "format": "LEVEL:%(levelname)s "
-                    "TIME:%(asctime)s MESSAGE:%(message)s"
-                },
+# if not DEBUG:
+if env.bool("LOGGING_PATH", default=False):
+    LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": True,
+        "formatters": {
+            "verbose": {
+                "format": "LEVEL:%(levelname)s "
+                "TIME:%(asctime)s MESSAGE:%(message)s"
             },
-            "handlers": {
-                "file": {
-                    "level": "INFO",
-                    "class": "logging.FileHandler",
-                    "filename": env.str("LOGGING_PATH"),
-                    "formatter": "verbose",
-                }
-            },
-            "loggers": {
-                "django": {
-                    "handlers": ["file"],
-                    "level": "INFO",
-                    "propagate": True,
-                }
-            },
-        }
+        },
+        "handlers": {
+            "file": {
+                "level": "INFO",
+                "class": "logging.FileHandler",
+                "filename": env.str("LOGGING_PATH"),
+                "formatter": "verbose",
+            }
+        },
+        "loggers": {
+            "django": {
+                "handlers": ["file"],
+                "level": "INFO",
+                "propagate": True,
+            }
+        },
+    }
 
 SERIALIZER_FIELD_MAPPING = {
     BigAutoField: fields.Int,

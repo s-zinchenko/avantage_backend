@@ -4,3 +4,4 @@ DATABASE_USER=avantage_admin
 DATABASE_PASSWORD=gNKT7Xw&
 PROJECT_DIR=/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_backend/application
 PROJECT_PACKAGES_DIR=/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages
+LOGGING_PATH=/home/r/raigoreg/raigoreg.beget.tech/raigoreg.beget.tech.requests.log
