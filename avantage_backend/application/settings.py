@@ -174,7 +174,7 @@ LOGGING = {
     'loggers': {
         # This is the "catch all" logger
         '': {
-            'handlers': ['console', 'syslog', 'mail_admins', 'sentry'],
+            'handlers': ['console', 'syslog', 'sentry'],
             'level': 'DEBUG',
             'propagate': False,
         },
