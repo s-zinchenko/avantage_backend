@@ -2,5 +2,5 @@ DEBUG=True
 DATABASE_NAME=raigoreg_avantag
 DATABASE_USER=raigoreg_avantag
 DATABASE_PASSWORD=gNKT7Xw&
-PROJECT_DIR=/home/o/optmolum/ooomlk.ru/moloko_backend
-PROJECT_PACKAGES_DIR=/home/o/optmolum/ooomlk.ru/moloko_backend/venv/lib/python3.8/site-packages
+PROJECT_DIR=/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend
+PROJECT_PACKAGES_DIR/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages
