@@ -1,6 +1,6 @@
 from django.db import models
-from django.db.models.enums import StrEnum
 
+from avantage_backend.share.enums import StrEnum
 from utils.files import upload_path
 
 
