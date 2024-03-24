@@ -145,7 +145,7 @@ LOGGING = {
     },
     "handlers": {
         "file": {
-            "level": "INFO",
+            "level": "DEBUG",
             "class": "logging.FileHandler",
             "filename": env.str("LOGGING_PATH"),
             "formatter": "verbose",
@@ -154,7 +154,7 @@ LOGGING = {
     "loggers": {
         "django": {
             "handlers": ["file"],
-            "level": "INFO",
+            "level": "DEBUG",
             "propagate": True,
         }
     },
