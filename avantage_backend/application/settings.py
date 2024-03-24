@@ -133,53 +133,38 @@ STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 )
 
-# if not DEBUG:
+if not DEBUG:
 # if env.bool("LOGGING_PATH", default=False):
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'filters': {
-        'require_debug_false': {
-            '()': 'django.utils.log.RequireDebugFalse'
+    LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "formatters": {
+            "console": {
+                # exact format is not important, this is the minimum information
+                "format": "%(created)f %(asctime)s.%(msecs)03d [%(process)d] "
+                          "[%(name)s::%(module)s:%(funcName)s:%(lineno)d] "
+                          "%(levelname)s: %(message)s",
+                "datefmt": "%Y-%m-%d %H:%M:%S",
+                "class": "logging.Formatter",
+            },
+        },
+        "handlers": {
+            "file": {
+                "level": "ERROR",
+                "class": "logging.FileHandler",
+                "filename": env.str("LOGGING_PATH", default="./requests_log.txt"),
+            },
+        },
+        "loggers": {
+            "": {"level": "INFO", "handlers": ["file"]},
+            "django.db.backends": {  # type: ignore
+                "level": "DEBUG",
+                "propagate": False,
+                "handlers": ["file"]
+            },
         }
-    },
-    'formatters': {
-        'verbose': {
-            'format': '[contactor] %(levelname)s %(asctime)s %(message)s'
-        },
-    },
-    'handlers': {
-        # Send all messages to console
-        'console': {
-            'level': 'DEBUG',
-            'class': 'logging.StreamHandler',
-        },
-        # Send info messages to syslog
-        'syslog':{
-            'level':'INFO',
-            'class': 'logging.handlers.SysLogHandler',
-            'facility': SysLogHandler.LOG_LOCAL2,
-            'address': '/dev/log',
-            'formatter': 'verbose',
-        },
-        # Warning messages are sent to admin emails
-        # critical errors are logged to sentry
-        'sentry': {
-            "level": "ERROR",
-            "class": "logging.FileHandler",
-            "filename": env.str("LOGGING_PATH"),
-            "formatter": "verbose",
-        },
-    },
-    'loggers': {
-        # This is the "catch all" logger
-        '': {
-            'handlers': ['console', 'syslog', 'sentry'],
-            'level': 'DEBUG',
-            'propagate': False,
-        },
     }
-}
+
 
 SERIALIZER_FIELD_MAPPING = {
     BigAutoField: fields.Int,
