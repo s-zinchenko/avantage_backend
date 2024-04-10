@@ -1,0 +1,822 @@
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/views.py", line 67, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/edit.py", line 152, in post
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 205, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 200, in errors
+    self.full_clean()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 434, in full_clean
+    self._clean_form()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 455, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/forms.py", line 217, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 46, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_user
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/views.py", line 67, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/edit.py", line 152, in post
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 205, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 200, in errors
+    self.full_clean()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 434, in full_clean
+    self._clean_form()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 455, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/forms.py", line 217, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 46, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_user
+Unhandled exception on /api/wiki.get
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: wiki_letter
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 547, in dump
+    obj = list(obj)
+          ^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 320, in __iter__
+    self._fetch_all()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: wiki_letter
+Internal Server Error: /api/wiki.get
+Unhandled exception on /api/wiki.get
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: wiki_letter
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 547, in dump
+    obj = list(obj)
+          ^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 320, in __iter__
+    self._fetch_all()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: wiki_letter
+Internal Server Error: /api/wiki.get
+Unhandled exception on /api/wiki.get
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: wiki_letter
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 547, in dump
+    obj = list(obj)
+          ^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 320, in __iter__
+    self._fetch_all()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: wiki_letter
+Internal Server Error: /api/wiki.get
+Unhandled exception on /api/wiki.get
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: wiki_letter
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 547, in dump
+    obj = list(obj)
+          ^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 320, in __iter__
+    self._fetch_all()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: wiki_letter
+Internal Server Error: /api/wiki.get
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/views.py", line 67, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/edit.py", line 152, in post
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 205, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 200, in errors
+    self.full_clean()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 434, in full_clean
+    self._clean_form()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 455, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/forms.py", line 217, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 46, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_user
+Internal Server Error: /admin/login/
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such table: core_user
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/admin/sites.py", line 440, in login
+    return LoginView.as_view(**defaults)(request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 84, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 92, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 133, in _wrapped_view
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/utils/decorators.py", line 46, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/cache.py", line 62, in _wrapped_view_func
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/views.py", line 67, in dispatch
+    return super().dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/base.py", line 119, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/generic/edit.py", line 152, in post
+    if form.is_valid():
+       ^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 205, in is_valid
+    return self.is_bound and not self.errors
+                                 ^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 200, in errors
+    self.full_clean()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 434, in full_clean
+    self._clean_form()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/forms/forms.py", line 455, in _clean_form
+    cleaned_data = self.clean()
+                   ^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/forms.py", line 217, in clean
+    self.user_cache = authenticate(
+                      ^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/views/decorators/debug.py", line 42, in sensitive_variables_wrapper
+    return func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/__init__.py", line 77, in authenticate
+    user = backend.authenticate(request, **credentials)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/backends.py", line 42, in authenticate
+    user = UserModel._default_manager.get_by_natural_key(username)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/contrib/auth/base_user.py", line 46, in get_by_natural_key
+    return self.get(**{self.model.USERNAME_FIELD: username})
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 492, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 302, in __len__
+    self._fetch_all()
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 1507, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/query.py", line 57, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/models/sql/compiler.py", line 1361, in execute_sql
+    cursor.execute(sql, params)
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 67, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 80, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 84, in _execute
+    with self.db.wrap_database_errors:
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/utils.py", line 89, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django/db/backends/sqlite3/base.py", line 477, in execute
+    return Database.Cursor.execute(self, query, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such table: core_user
+Unhandled exception on /api/blog.article_list
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 550, in dump
+    processed_obj = self._invoke_dump_processors(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1065, in _invoke_dump_processors
+    data = self._invoke_processors(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in _invoke_processors
+    data = [processor(item, many=many, **kwargs) for item in data]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in <listcomp>
+    data = [processor(item, many=many, **kwargs) for item in data]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_backend/share/serializers.py", line 8, in prepare
+    lang = self.context["request"].GET["lang"]
+           ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+Internal Server Error: /api/blog.article_list
+Unhandled exception on /api/blog.article_list
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 550, in dump
+    processed_obj = self._invoke_dump_processors(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1065, in _invoke_dump_processors
+    data = self._invoke_processors(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in _invoke_processors
+    data = [processor(item, many=many, **kwargs) for item in data]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in <listcomp>
+    data = [processor(item, many=many, **kwargs) for item in data]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_backend/share/serializers.py", line 8, in prepare
+    lang = self.context["request"].GET["lang"]
+           ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+Internal Server Error: /api/blog.article_list
+Unhandled exception on /api/blog.article_list
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 550, in dump
+    processed_obj = self._invoke_dump_processors(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1065, in _invoke_dump_processors
+    data = self._invoke_processors(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in _invoke_processors
+    data = [processor(item, many=many, **kwargs) for item in data]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in <listcomp>
+    data = [processor(item, many=many, **kwargs) for item in data]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_backend/share/serializers.py", line 8, in prepare
+    lang = self.context["request"].GET["lang"]
+           ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+Internal Server Error: /api/blog.article_list
+Unhandled exception on /api/blog.case_list
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 550, in dump
+    processed_obj = self._invoke_dump_processors(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1065, in _invoke_dump_processors
+    data = self._invoke_processors(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in _invoke_processors
+    data = [processor(item, many=many, **kwargs) for item in data]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in <listcomp>
+    data = [processor(item, many=many, **kwargs) for item in data]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_backend/blog/serializers.py", line 50, in prepare
+    data.update(**super().prepare(obj, *args, **kwargs))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_backend/share/serializers.py", line 8, in prepare
+    lang = self.context["request"].GET["lang"]
+           ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+Internal Server Error: /api/blog.case_list
+Unhandled exception on /api/blog.case_list
+Traceback (most recent call last):
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 118, in dispatch
+    return self.perform_response_pipelines(response)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 100, in perform_response_pipelines
+    response = self._serializer_pipeline(response)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/django_serializer/v2/views/base.py", line 79, in _serializer_pipeline
+    return self.Meta.serializer(**kwargs).dump(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 550, in dump
+    processed_obj = self._invoke_dump_processors(
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1065, in _invoke_dump_processors
+    data = self._invoke_processors(
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in _invoke_processors
+    data = [processor(item, many=many, **kwargs) for item in data]
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/venv/lib/python3.11/site-packages/marshmallow/schema.py", line 1219, in <listcomp>
+    data = [processor(item, many=many, **kwargs) for item in data]
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_backend/blog/serializers.py", line 50, in prepare
+    data.update(**super().prepare(obj, *args, **kwargs))
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_backend/share/serializers.py", line 8, in prepare
+    lang = self.context["request"].GET["lang"]
+           ~~~~~~~~~~~~^^^^^^^^^^^
+KeyError: 'request'
+Internal Server Error: /api/blog.case_list
