@@ -20,3 +20,7 @@ class AwardFormAdmin(forms.ModelForm):
             )
 
         return cleaned_data
+
+
+class GetTeamListForm(LangForm):
+    is_chief = forms.NullBooleanField(required=False)

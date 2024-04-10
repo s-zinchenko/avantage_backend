@@ -1,5 +1,7 @@
 from django.db import models
 
+from utils.files import upload_path
+
 
 class Product(models.Model):
     class Meta:
@@ -19,8 +21,14 @@ class Product(models.Model):
         max_length=1024, verbose_name="Описание (En)"
     )
     order = models.PositiveIntegerField(verbose_name="Порядковый номер")
-    external_link = models.URLField(
+    external_link = models.CharField(
         max_length=512, verbose_name="Ссылка", blank=True, null=True
+    )
+    background_image = models.FileField(
+        verbose_name="Фото",
+        upload_to=upload_path,
+        null=True,
+        blank=True
     )
     events_ru = models.TextField(verbose_name="События (Ru)")
     events_en = models.TextField(verbose_name="События (En)")

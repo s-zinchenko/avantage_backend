@@ -18,13 +18,15 @@ def send_mail(
     fail_silently: bool = False,
     attachment: File = None,
 ) -> Any:
-    from_email = settings.EMAIL_FROM_USER
+    # from_email = settings.EMAIL_FROM_USER
+    from_email = settings.EMAIL_HOST_USER
 
     headers: Dict[Any, Any] = {}
 
     msg = EmailMultiAlternatives(
         subject=subject,
-        body="",
+        # body="",
+        body=message,
         from_email=from_email,
         to=recipient_list,
         headers=headers,
@@ -50,5 +52,5 @@ def send_template_mail(
         message,
         recipient_list,
         fail_silently,
-        attachment=context.get("Документ"),
+        # attachment=context.get("Документ"),
     )

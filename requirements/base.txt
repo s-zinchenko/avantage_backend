@@ -3,7 +3,7 @@ gunicorn==20.1.0
 django-cors-headers==3.13.0
 django-silk==5.0.1
 django-environ==0.9.0
-django_serializer==0.1.0a6
+django_serializer==1.2.1
 django-solo==2.0.0
 phonenumberslite==8.12.38
 django-import-export==3.0.2

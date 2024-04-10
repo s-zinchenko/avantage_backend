@@ -11,7 +11,7 @@ class CooperationBid(SendEmailMixin, models.Model):
         verbose_name_plural = "Заявки на сотрудничество"
 
     email_subject: str = "Заявка на сотрудничество"
-    email_recipient = "websiteee02@mail.ru"
+    email_recipient = "zinchieko02@mail.ru"
 
     full_name = models.CharField(max_length=512, verbose_name="Полное имя")
     contact_phone = models.CharField(

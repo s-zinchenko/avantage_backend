@@ -25,6 +25,7 @@ class GetCompanyFilesSerializer(LangSerializer):
     requisites = fields.Str()
     portfolio = fields.Str()
     form_for_freelancers = fields.Str()
+    contact_email = fields.Str()
 
 
 class GetCompanyContactsSerializer(LangSerializer):
@@ -32,8 +33,9 @@ class GetCompanyContactsSerializer(LangSerializer):
     contact_phone = fields.Str()
     contact_email = fields.Str()
     telegram = fields.Str()
-    email_for_clients = fields.Str()
+    email_for_clients = fields.List(fields.Str())
     email_for_mass_media = fields.Str()
+    email_for_partners = fields.Str()
     email_for_applicant = fields.Str()
 
 
@@ -42,6 +44,7 @@ class TeamMemberSerializer(LangSerializer):
     name = fields.Str()
     position = fields.Str()
     photo = fields.Str()
+    is_chief = fields.Bool()
 
 
 class GalleryAttachmentSerializer(ModelSerializer):
@@ -49,8 +52,8 @@ class GalleryAttachmentSerializer(ModelSerializer):
         model = GalleryAttachment
         fields = (
             "id",
-            "image",
         )
+    photo = fields.Str()
 
     @pre_dump
     def prepare(self, obj, *args, **kwargs):

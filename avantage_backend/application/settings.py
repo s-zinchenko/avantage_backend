@@ -93,6 +93,7 @@ DATABASES = {
         # "ENGINE": "django.db.backends.mysql",
         "ENGINE": "django.db.backends.sqlite3",
         "NAME": "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_admin",
+        # "NAME": "avantage_admin",
         # "USER": env.str("DATABASE_USER", default="admin"),
         # "PASSWORD": env.str("DATABASE_PASSWORD", default="admin"),
         # "HOST": env.str("DATABASE_HOST", default="admin"),
@@ -179,13 +180,16 @@ SERIALIZER_FORM_FIELD_MAPPING = {
 
 # EMAIL SETTINGS
 EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
-EMAIL_HOST = env("EMAIL_HOST", default="smtp.mail.ru")
-EMAIL_PORT = env("EMAIL_PORT", default=2525)
+EMAIL_HOST = "smtp.yandex.ru"
+EMAIL_PORT = 587
 EMAIL_USE_TLS = env("EMAIL_USE_TLS", default=True)
-EMAIL_USE_SSL = False
-EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="admin@mail.com")
-EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="password")
-EMAIL_FROM_USER = env("EMAIL_FROM_USER", default="admin@mail.com")
+EMAIL_HOST_USER = env("EMAIL_HOST_USER", default="semeonzin4enko@yandex.ru")
+EMAIL_HOST_PASSWORD = env("EMAIL_HOST_PASSWORD", default="pjjnrnxcqqtfwquz")
+# EMAIL_FROM_USER = env("EMAIL_FROM_USER", default="zinchieko02@mail.com")
+
+EMAIL_SERVER = EMAIL_HOST_USER
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+EMAIL_ADMIN = EMAIL_HOST_USER
 
 COOPERATION_BID_EMAIL_RECIPIENT = env(
     "EMAIL_FROM_USER", default="admin@mail.com"

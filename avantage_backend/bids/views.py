@@ -19,5 +19,5 @@ class CooperationBidCreateView(CreateApiView):
         self, request: WSGIRequest, *args: Any, **kwargs: Dict[Any, Any]
     ):
         obj = super().execute(request, *args, **kwargs)
-        # obj.send_email()
+        obj.send_email()
         return obj

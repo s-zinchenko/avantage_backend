@@ -3,7 +3,7 @@ from typing import Any, Dict
 from django.core.handlers.wsgi import WSGIRequest
 from django_serializer.v2.views import ApiView, HttpMethod, ListApiView
 
-from avantage_backend.core.forms import GetAwardsListForm
+from avantage_backend.core.forms import GetAwardsListForm, GetTeamListForm
 from avantage_backend.core.models import (
     Company,
     TeamMember,
@@ -68,9 +68,17 @@ class GetCompanyContactsView(ApiView):
 class GetTeamMemberListView(ListApiView):
     class Meta:
         model = TeamMember
-        query_form = LangForm
+        query_form = GetTeamListForm
         serializer = TeamMemberSerializer
         tags = ["core"]
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        is_chief = self.request_query.get("is_chief")
+        if is_chief is not None:
+            queryset = queryset.filter(is_chief=is_chief)
+
+        return queryset
 
 
 class GetGalleryView(ListApiView):

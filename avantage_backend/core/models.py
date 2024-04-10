@@ -133,9 +133,12 @@ class Company(SingletonModel):
     )
     contact_email = models.EmailField(verbose_name="Контактная почта")
     telegram = models.CharField(max_length=256, verbose_name="Телеграм")
-    email_for_clients = models.EmailField(verbose_name="Email для клиентов")
+    email_for_clients = models.CharField(max_length=1024,verbose_name="Email для клиентов")
     email_for_mass_media = models.EmailField(
-        verbose_name="Email для СМИ и партнёров"
+        verbose_name="Email для СМИ"
+    )
+    email_for_partners = models.EmailField(
+        verbose_name="Email для партнёров", null=True
     )
     email_for_applicant = models.EmailField(
         verbose_name="Email для соискателей"
@@ -184,10 +187,11 @@ class Company(SingletonModel):
             "implemented_projects": self.implemented_projects,
             "address": self.address_ru,
             "contact_phone": self.contact_phone,
-            "contact_emai": self.contact_email,
+            "contact_email": self.contact_email,
             "telegram": self.telegram,
-            "email_for_clients": self.email_for_clients,
+            "email_for_clients": self.email_for_clients.split(","),
             "email_for_mass_media": self.email_for_mass_media,
+            "email_for_partners": self.email_for_partners,
             "email_for_applicant": self.email_for_applicant,
             "portfolio": self.portfolio.url,
             "requisites": self.requisites.url,
@@ -212,10 +216,11 @@ class Company(SingletonModel):
             "implemented_projects": self.implemented_projects,
             "address": self.address_en,
             "contact_phone": self.contact_phone,
-            "contact_emai": self.contact_email,
+            "contact_email": self.contact_email,
             "telegram": self.telegram,
-            "email_for_clients": self.email_for_clients,
+            "email_for_clients": self.email_for_clients.split(","),
             "email_for_mass_media": self.email_for_mass_media,
+            "email_for_partners": self.email_for_partners,
             "email_for_applicant": self.email_for_applicant,
             "portfolio": self.portfolio.url,
             "requisites": self.requisites.url,
@@ -258,6 +263,7 @@ class TeamMember(models.Model):
         verbose_name="Фото",
         upload_to=upload_path,
     )
+    is_chief = models.BooleanField(verbose_name="Руководитель?", default=False)
 
     def __str__(self) -> str:
         return f"Сотрудник {self.name_ru}"
@@ -269,6 +275,7 @@ class TeamMember(models.Model):
             "name": self.name_ru,
             "position": self.position_ru,
             "photo": self.photo.url,
+            "is_chief": self.is_chief,
         }
 
     @property
@@ -278,6 +285,7 @@ class TeamMember(models.Model):
             "name": self.name_en,
             "position": self.position_en,
             "photo": self.photo.url,
+            "is_chief": self.is_chief,
         }
 
 
@@ -304,7 +312,8 @@ class Award(models.Model):
     year = models.PositiveIntegerField(verbose_name="Год")
     title_ru = models.CharField(max_length=256, verbose_name="Название (Ru)")
     title_en = models.CharField(max_length=256, verbose_name="Название (En)")
-    place = models.CharField(max_length=256, verbose_name="Место")
+    place_ru = models.CharField(max_length=256, verbose_name="Место (Ru)", null=True)
+    place_en = models.CharField(max_length=256, verbose_name="Место (En)", null=True)
     nomination_ru = models.CharField(
         max_length=256, verbose_name="Номинация (Ru)"
     )
@@ -329,7 +338,7 @@ class Award(models.Model):
             "id": self.id,
             "year": self.year,
             "title": self.title_ru,
-            "place": self.place,
+            "place": self.place_ru,
             "nomination": self.nomination_ru,
             "event": self.event,
             "attachment": self.attachment.url,
@@ -342,7 +351,7 @@ class Award(models.Model):
             "id": self.id,
             "year": self.year,
             "title": self.title_en,
-            "place": self.place,
+            "place": self.place_en,
             "nomination": self.nomination_en,
             "event": self.event,
             "attachment": self.attachment.url,
