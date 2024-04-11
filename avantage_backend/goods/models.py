@@ -45,7 +45,7 @@ class Product(models.Model):
             "order": self.order,
             "external_link": self.external_link,
             "events": self.events_ru,
-            "background_image": self.background_image.url,
+            "background_image": self.background_image.url if self.background_image else None,
         }
 
     @property
@@ -57,5 +57,5 @@ class Product(models.Model):
             "order": self.order,
             "external_link": self.external_link,
             "events": self.events_en,
-            "background_image": self.background_image.url,
+            "background_image": self.background_image.url if self.background_image else None,
         }
