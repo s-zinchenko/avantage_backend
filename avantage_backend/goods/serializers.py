@@ -10,3 +10,4 @@ class ProductSerializer(LangSerializer):
     order = fields.Int()
     external_link = fields.Str()
     events = fields.Str()
+    background_image = fields.Str()

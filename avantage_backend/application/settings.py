@@ -4,7 +4,7 @@ from logging.handlers import SysLogHandler
 
 import environ
 from django.db.models import BigAutoField, FileField as DbFileField
-from django.forms import FileField as FormFileField, ChoiceField
+from django.forms import FileField as FormFileField, ChoiceField, NullBooleanField
 from marshmallow import fields
 
 BASE_DIR = os.path.dirname(
@@ -176,6 +176,7 @@ SERIALIZER_FIELD_MAPPING = {
 SERIALIZER_FORM_FIELD_MAPPING = {
     FormFileField: fields.Str,
     ChoiceField: fields.Str,
+    NullBooleanField: fields.Boolean,
 }
 
 # EMAIL SETTINGS
