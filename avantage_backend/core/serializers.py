@@ -1,4 +1,4 @@
-from django_serializer.v2.serializer import ModelSerializer
+from django_serializer.v2.serializer import ModelSerializer, Serializer
 from marshmallow import fields, pre_dump
 
 from avantage_backend.core.models import GalleryAttachment
@@ -18,7 +18,7 @@ class AboutCompanySerializer(LangSerializer):
     welcome_video = fields.Str()
 
 
-class GetCompanyFilesSerializer(LangSerializer):
+class GetCompanyFilesSerializer(Serializer):
     presentation = fields.Str()
     brief = fields.Str()
     agreement = fields.Str()
@@ -26,6 +26,9 @@ class GetCompanyFilesSerializer(LangSerializer):
     portfolio = fields.Str()
     form_for_freelancers = fields.Str()
     contact_email = fields.Str()
+    telegram = fields.Str()
+    ok = fields.Str()
+    vk = fields.Str()
 
 
 class GetCompanyContactsSerializer(LangSerializer):
@@ -33,6 +36,8 @@ class GetCompanyContactsSerializer(LangSerializer):
     contact_phone = fields.Str()
     contact_email = fields.Str()
     telegram = fields.Str()
+    ok = fields.Str()
+    vk = fields.Str()
     email_for_clients = fields.List(fields.Str())
     email_for_mass_media = fields.Str()
     email_for_partners = fields.Str()

@@ -133,6 +133,8 @@ class Company(SingletonModel):
     )
     contact_email = models.EmailField(verbose_name="Контактная почта")
     telegram = models.CharField(max_length=256, verbose_name="Телеграм")
+    ok = models.CharField(max_length=256, verbose_name="Одноклассники", null=True)
+    vk = models.CharField(max_length=256, verbose_name="ВКонтакте", null=True)
     email_for_clients = models.CharField(max_length=1024,verbose_name="Email для клиентов")
     email_for_mass_media = models.EmailField(
         verbose_name="Email для СМИ"
@@ -189,6 +191,8 @@ class Company(SingletonModel):
             "contact_phone": self.contact_phone,
             "contact_email": self.contact_email,
             "telegram": self.telegram,
+            "ok": self.ok,
+            "vk": self.vk,
             "email_for_clients": self.email_for_clients.split(","),
             "email_for_mass_media": self.email_for_mass_media,
             "email_for_partners": self.email_for_partners,
@@ -218,6 +222,8 @@ class Company(SingletonModel):
             "contact_phone": self.contact_phone,
             "contact_email": self.contact_email,
             "telegram": self.telegram,
+            "ok": self.ok,
+            "vk": self.vk,
             "email_for_clients": self.email_for_clients.split(","),
             "email_for_mass_media": self.email_for_mass_media,
             "email_for_partners": self.email_for_partners,
