@@ -166,7 +166,7 @@ class Case(models.Model):
             "body": self.body_ru,
             "type": self.type_ru,
             "show_on_main_page": self.show_on_main_page,
-            "cover_image": self.cover_image,
+            "cover_image": self.cover_image.url if self.cover_image else None,
         }
 
     @property
@@ -179,5 +179,5 @@ class Case(models.Model):
             "body": self.body_en,
             "type": self.type_en,
             "show_on_main_page": self.show_on_main_page,
-            "cover_image": self.cover_image,
+            "cover_image": self.cover_image.url if self.cover_image else None,
         }
