@@ -1,3 +1,5 @@
+from collections import defaultdict
+
 from django.db.models import Prefetch
 from django_serializer.v2.views import ListApiView
 
@@ -21,3 +23,16 @@ class WikiView(ListApiView):
             .order_by("value")
         )
         return qs
+
+    # def execute(self, request, *args, **kwargs):
+    #     qs = super().execute(request, *args, **kwargs)
+    #     res = dict.fromkeys(Letter.Lang.values, [])
+    #     for letter in qs:
+    #         if letter.lang:
+    #             lang = letter.lang
+    #         else:
+    #             lang = Letter.Lang.RU
+    #
+    #         res[lang].append(letter)
+    #
+    #     return {"records":res}

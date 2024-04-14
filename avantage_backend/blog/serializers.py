@@ -19,6 +19,7 @@ class CaseAttachmentSerializer(ModelSerializer):
             "id",
             "is_main",
             "file",
+            "content_type"
         )
 
     @pre_dump
@@ -40,6 +41,7 @@ class CaseSerializer(LangSerializer):
     body = fields.Str()
     type = fields.Str()
     show_on_main_page = fields.Bool()
+    cover_image = fields.Str()
 
     customer = fields.Nested(CustomerSerializer(), many=False)
     photos = fields.Nested(CaseAttachmentSerializer(), many=True)

@@ -6,10 +6,15 @@ class Letter(models.Model):
         verbose_name = "Буква"
         verbose_name_plural = "Буквы"
 
+    class Lang(models.TextChoices):
+        RU = "ru"
+        EN = "en"
+
     value = models.CharField(max_length=1, unique=True, verbose_name="Буква")
+    lang = models.CharField(max_length=32, null=True, choices=Lang.choices, verbose_name="Язык")
 
     def __str__(self):
-        return self.value
+        return f"{self.value}, язык {self.lang}"
 
 
 class Record(models.Model):
