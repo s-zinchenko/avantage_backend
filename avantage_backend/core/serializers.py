@@ -16,6 +16,7 @@ class AboutCompanySerializer(LangSerializer):
     unique_scenarios = fields.Int()
     implemented_projects = fields.Int()
     welcome_video = fields.Str()
+    presentation = fields.Str()
 
 
 class GetCompanyFilesSerializer(Serializer):
