@@ -21,7 +21,10 @@ class Product(models.Model):
         max_length=1024, verbose_name="Описание (En)"
     )
     order = models.PositiveIntegerField(verbose_name="Порядковый номер")
-    external_link = models.CharField(
+    external_link_ru = models.CharField(
+        max_length=512, verbose_name="Ссылка", blank=True, null=True
+    )
+    external_link_en = models.CharField(
         max_length=512, verbose_name="Ссылка", blank=True, null=True
     )
     background_image = models.FileField(
@@ -43,7 +46,7 @@ class Product(models.Model):
             "title": self.title_ru,
             "description": self.description_ru,
             "order": self.order,
-            "external_link": self.external_link,
+            "external_link": self.external_link_ru,
             "events": self.events_ru,
             "background_image": self.background_image.url if self.background_image else None,
         }
@@ -55,7 +58,7 @@ class Product(models.Model):
             "title": self.title_en,
             "description": self.description_en,
             "order": self.order,
-            "external_link": self.external_link,
+            "external_link": self.external_link_en,
             "events": self.events_en,
             "background_image": self.background_image.url if self.background_image else None,
         }
