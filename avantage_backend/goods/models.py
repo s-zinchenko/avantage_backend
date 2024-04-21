@@ -22,10 +22,10 @@ class Product(models.Model):
     )
     order = models.PositiveIntegerField(verbose_name="Порядковый номер")
     external_link_ru = models.CharField(
-        max_length=512, verbose_name="Ссылка", blank=True, null=True
+        max_length=512, verbose_name="Ссылка (Ru)", blank=True, null=True
     )
     external_link_en = models.CharField(
-        max_length=512, verbose_name="Ссылка", blank=True, null=True
+        max_length=512, verbose_name="Ссылка (En)", blank=True, null=True
     )
     background_image = models.FileField(
         verbose_name="Фото",
