@@ -42,6 +42,7 @@ class CaseSerializer(LangSerializer):
     type = fields.Str()
     show_on_main_page = fields.Bool()
     cover_image = fields.Str()
+    main_attachment_type = fields.Str()
 
     customer = fields.Nested(CustomerSerializer(), many=False)
     photos = fields.Nested(CaseAttachmentSerializer(), many=True)
@@ -50,4 +51,5 @@ class CaseSerializer(LangSerializer):
     def prepare(self, obj, *args, **kwargs):
         data = {"photos": obj.caseattachment_set.all()}
         data.update(**super().prepare(obj, *args, **kwargs))
+        data["main_attachment_type"] = obj.caseattachment_set.filter(is_main=True).first().content_type
         return data
