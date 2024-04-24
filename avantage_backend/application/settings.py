@@ -92,8 +92,9 @@ DATABASES = {
     "default": {
         # "ENGINE": "django.db.backends.mysql",
         "ENGINE": "django.db.backends.sqlite3",
-        "NAME": "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_admin",
+        # "NAME": "/home/r/raigoreg/raigoreg.beget.tech/public_html/avantage_backend/avantage_admin",
         # "NAME": "avantage_admin",
+        "NAME": "avantage_admin_prod",
         # "USER": env.str("DATABASE_USER", default="admin"),
         # "PASSWORD": env.str("DATABASE_PASSWORD", default="admin"),
         # "HOST": env.str("DATABASE_HOST", default="admin"),
@@ -127,9 +128,15 @@ MEDIA_URL = "/media/"
 # STATIC_URL = "/dj_static/"
 # STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
 
-STATIC_ROOT = '/home/r/raigoreg/raigoreg.beget.tech/public_html/static'
+# STATIC_ROOT = '/home/r/raigoreg/raigoreg.beget.tech/public_html/static'
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
+
+STATICFILES_DIRS = (
+
+)
 
 STATICFILES_FINDERS = (
     "django.contrib.staticfiles.finders.FileSystemFinder",
