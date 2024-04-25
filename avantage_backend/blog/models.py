@@ -1,4 +1,5 @@
 from django.db import models
+from tinymce.models import HTMLField
 
 from avantage_backend.share.enums import StrEnum
 from utils.files import upload_path
@@ -132,8 +133,8 @@ class Case(models.Model):
     customer = models.ForeignKey(
         "blog.Customer", on_delete=models.CASCADE, verbose_name="Заказчик"
     )
-    body_ru = models.TextField(verbose_name="Описание (Ru)")
-    body_en = models.TextField(verbose_name="Описание (En)")
+    body_ru = HTMLField(verbose_name="Описание (Ru)", null=True, blank=True)
+    body_en = HTMLField(verbose_name="Описание (En)", null=True, blank=True)
     type_ru = models.CharField(
         max_length=512,
         choices=((key, key) for key in list(TypeRU)),

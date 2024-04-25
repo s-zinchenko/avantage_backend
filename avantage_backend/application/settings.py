@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "solo",
     # "import_export",
+    "tinymce",
     "corsheaders",
 ]
 
@@ -63,6 +64,7 @@ CORS_ALLOWED_ORIGINS = [
     'https://localhost:3000',
     'http://127.0.0.1:3000',
     'https://127.0.0.1:3000',
+    'http://89.111.173.125:3000',
 ]
 
 if SILK:
