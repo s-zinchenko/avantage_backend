@@ -326,7 +326,9 @@ class Award(models.Model):
     nomination_en = models.CharField(
         max_length=256, verbose_name="Номинация (En)"
     )
-    event = models.CharField(max_length=256, verbose_name="Мероприятие")
+    event_ru = models.CharField(max_length=256, verbose_name="Мероприятие")
+    event_en = models.CharField(max_length=256, verbose_name="Мероприятие (En)", null=True)
+
     attachment = models.FileField(
         verbose_name="ЗD модель награды",
         upload_to=upload_path,
@@ -346,7 +348,7 @@ class Award(models.Model):
             "title": self.title_ru,
             "place": self.place_ru,
             "nomination": self.nomination_ru,
-            "event": self.event,
+            "event": self.event_ru,
             "attachment": self.attachment.url,
             "show_on_main_page": self.show_on_main_page,
         }
@@ -359,7 +361,7 @@ class Award(models.Model):
             "title": self.title_en,
             "place": self.place_en,
             "nomination": self.nomination_en,
-            "event": self.event,
+            "event": self.event_en,
             "attachment": self.attachment.url,
             "show_on_main_page": self.show_on_main_page,
         }
