@@ -12,6 +12,7 @@ class Letter(models.Model):
 
     value = models.CharField(max_length=1, unique=True, verbose_name="Буква")
     lang = models.CharField(max_length=32, null=True, choices=Lang.choices, verbose_name="Язык")
+    site_lang = models.CharField(max_length=32, null=True, choices=Lang.choices, verbose_name="Язык сайта", default=Lang.RU)
 
     def __str__(self):
         return f"{self.value}, язык {self.lang}"
