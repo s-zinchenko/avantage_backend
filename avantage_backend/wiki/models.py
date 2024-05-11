@@ -10,7 +10,7 @@ class Letter(models.Model):
         RU = "ru"
         EN = "en"
 
-    value = models.CharField(max_length=1, unique=True, verbose_name="Буква")
+    value = models.CharField(max_length=10, verbose_name="Буква")
     lang = models.CharField(max_length=32, null=True, choices=Lang.choices, verbose_name="Язык")
     site_lang = models.CharField(max_length=32, null=True, choices=Lang.choices, verbose_name="Язык сайта", default=Lang.RU)
 
