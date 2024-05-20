@@ -129,7 +129,7 @@ class Case(models.Model):
     title_en = models.CharField(
         max_length=512, verbose_name="Название кейса (En)"
     )
-    year = models.PositiveIntegerField(verbose_name="Год проведения")
+    year = models.CharField(verbose_name="Год проведения", null=True, max_length=32)
     customer = models.ForeignKey(
         "blog.Customer", on_delete=models.CASCADE, verbose_name="Заказчик"
     )

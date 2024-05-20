@@ -37,7 +37,7 @@ class CustomerSerializer(LangSerializer):
 class CaseSerializer(LangSerializer):
     id = fields.Int()
     title = fields.Str()
-    year = fields.Int()
+    year = fields.Str()
     body = fields.Str()
     type = fields.Str()
     show_on_main_page = fields.Bool()
