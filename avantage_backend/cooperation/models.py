@@ -28,6 +28,7 @@ class Rating(models.Model):
         verbose_name="Логотип рейтинга",
         upload_to=upload_path,
     )
+    link = models.CharField(max_length=1024, verbose_name="Ссылка на рейтинг", null=True)
 
     def __str__(self) -> str:
         return self.name

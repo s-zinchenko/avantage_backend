@@ -99,4 +99,4 @@ class GetAwardsListView(ListApiView):
         queryset = super().get_queryset()
         if show_on_main_page := self.request_query["show_on_main_page"]:
             queryset = queryset.filter(show_on_main_page=show_on_main_page)
-        return queryset
+        return queryset.order_by("award_order")

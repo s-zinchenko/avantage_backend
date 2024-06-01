@@ -8,14 +8,14 @@ def calculate_hex_uuid() -> str:
 
 
 def get_file_ext(filename: str) -> str:
-    _, ext = os.path.splitext(filename)
-    return ext.strip(".")
+    filename, ext = os.path.splitext(filename)
+    return filename, ext.strip(".")
 
 
 def generate_filename(filename: str) -> str:
     file_uuid = calculate_hex_uuid()
-    ext = get_file_ext(filename)
-    return f"{file_uuid}.{ext}"
+    file_name, ext = get_file_ext(filename)
+    return f"{file_name}_{file_uuid[:6]}.{ext}"
 
 
 def upload_path(instance, filename: str) -> str:  # type: ignore

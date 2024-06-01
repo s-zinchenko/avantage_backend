@@ -1,7 +1,7 @@
-from django_serializer.v2.serializer import ModelSerializer, Serializer
-from marshmallow import fields, pre_dump, post_dump
+from django_serializer.v2.serializer import ModelSerializer
+from marshmallow import fields, pre_dump
 
-from avantage_backend.blog.models import Article, Case, Customer, CaseAttachment
+from avantage_backend.blog.models import CaseAttachment
 from avantage_backend.share.serializers import LangSerializer
 
 
@@ -10,6 +10,7 @@ class ArticleSerializer(LangSerializer):
     title = fields.Str()
     external_link = fields.Str()
     photo = fields.Str()
+    article_order = fields.Int()
 
 
 class CaseAttachmentSerializer(ModelSerializer):
@@ -43,6 +44,7 @@ class CaseSerializer(LangSerializer):
     show_on_main_page = fields.Bool()
     cover_image = fields.Str()
     main_attachment_type = fields.Str()
+    case_order = fields.Int()
 
     customer = fields.Nested(CustomerSerializer(), many=False)
     photos = fields.Nested(CaseAttachmentSerializer(), many=True)

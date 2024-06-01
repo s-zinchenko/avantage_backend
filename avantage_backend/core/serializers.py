@@ -76,3 +76,5 @@ class AwardSerializer(LangSerializer):
     event = fields.Str()
     attachment = fields.Str()
     show_on_main_page = fields.Str()
+    award_order = fields.Int()
+    case_id = fields.Int()

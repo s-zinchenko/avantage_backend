@@ -23,7 +23,7 @@ class PartnerItemSerializer(ModelSerializer):
 class RatingItemSerializer(ModelSerializer):
     class SMeta:
         model = Rating
-        fields = ("logo",)
+        fields = ("logo", "link")
 
     @pre_dump
     def prepare(self, obj: Rating, **kwargs: Optional[Any]) -> Rating:

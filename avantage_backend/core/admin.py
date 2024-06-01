@@ -37,5 +37,6 @@ class AwardAdmin(admin.ModelAdmin):
     list_display = (
         "title_ru",
         "show_on_main_page",
+        "award_order",
     )
     form = AwardFormAdmin

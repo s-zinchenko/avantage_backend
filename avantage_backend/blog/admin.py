@@ -16,11 +16,21 @@ class CaseAttachmentInlineAdmin(admin.TabularInline):
 
 @admin.register(Article)
 class ArticleAdmin(admin.ModelAdmin):
-    pass
+    list_display = [
+        "id",
+        "title_ru",
+        "article_order",
+    ]
 
 
 @admin.register(Case)
 class CaseAdmin(admin.ModelAdmin):
+    list_display = [
+        "id",
+        "title_ru",
+        "year",
+        "case_order",
+    ]
     inlines = [
         CaseAttachmentInlineAdmin,
     ]

@@ -328,6 +328,7 @@ class Award(models.Model):
     )
     event_ru = models.CharField(max_length=256, verbose_name="Мероприятие")
     event_en = models.CharField(max_length=256, verbose_name="Мероприятие (En)", null=True)
+    case = models.ForeignKey("blog.Case", verbose_name="Кейс", null=True, on_delete=models.CASCADE)
 
     attachment = models.FileField(
         verbose_name="ЗD модель награды",
@@ -336,6 +337,7 @@ class Award(models.Model):
     show_on_main_page = models.BooleanField(
         verbose_name="Показывать на главной странице", default=False
     )
+    award_order = models.IntegerField(verbose_name="Порядковый номер награды", default=1)
 
     def __str__(self) -> str:
         return f"Награда {self.title_ru}"
@@ -351,6 +353,8 @@ class Award(models.Model):
             "event": self.event_ru,
             "attachment": self.attachment.url,
             "show_on_main_page": self.show_on_main_page,
+            "award_order": self.award_order,
+            "case_id": self.case_id,
         }
 
     @property
@@ -364,4 +368,6 @@ class Award(models.Model):
             "event": self.event_en,
             "attachment": self.attachment.url,
             "show_on_main_page": self.show_on_main_page,
+            "award_order": self.award_order,
+            "case_id": self.case_id,
         }

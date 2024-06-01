@@ -14,6 +14,9 @@ class GetArticleListView(ListApiView):
         serializer = ArticleSerializer
         tags = ["blog"]
 
+    def get_queryset(self):
+        return super().get_queryset().order_by("article_order")
+
 
 class GetCaseListView(ListApiView):
     class Meta:
@@ -33,7 +36,7 @@ class GetCaseListView(ListApiView):
             queryset = queryset.filter(type_en=case_type)
         if show_on_main_page := self.request_query["show_on_main_page"]:
             queryset = queryset.filter(show_on_main_page=show_on_main_page)
-        return queryset
+        return queryset.order_by("case_order")
 
 
 class GetCaseView(GetApiView):

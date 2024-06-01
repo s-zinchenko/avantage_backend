@@ -21,6 +21,7 @@ class Article(models.Model):
         verbose_name="Фото",
         upload_to=upload_path,
     )
+    article_order = models.IntegerField(verbose_name="Порядковый номер статьи", default=1)
 
     def __str__(self):
         return self.title_ru
@@ -32,6 +33,7 @@ class Article(models.Model):
             "title": self.title_ru,
             "external_link": self.external_link,
             "photo": self.photo.url,
+            "article_order": self.article_order,
         }
 
     @property
@@ -41,6 +43,7 @@ class Article(models.Model):
             "title": self.title_en,
             "external_link": self.external_link,
             "photo": self.photo.url,
+            "article_order": self.article_order,
         }
 
 
@@ -118,10 +121,12 @@ class Case(models.Model):
     class TypeRU(StrEnum):
         INTERNAL = "ВНУТРЕННИЕ КОММУНИКАЦИИ"
         EXTERNAL = "ВНЕШНИЕ КОММУНИКАЦИИ"
+        MICE = "MICE"
 
     class TypeEN(StrEnum):
         INTERNAL = "INTERNAL COMMUNICATIONS"
         EXTERNAL = "EXTERNAL COMMUNICATIONS"
+        MICE = "MICE"
 
     title_ru = models.CharField(
         max_length=512, verbose_name="Название кейса (Ru)"
@@ -153,9 +158,10 @@ class Case(models.Model):
         upload_to=upload_path,
         null=True
     )
+    case_order = models.IntegerField(verbose_name="Порядковый номер кейса", default=1)
 
     def __str__(self):
-        return self.title_ru
+        return f"id: {self.id} {self.title_ru}"
 
     @property
     def ru(self):
@@ -168,6 +174,7 @@ class Case(models.Model):
             "type": self.type_ru,
             "show_on_main_page": self.show_on_main_page,
             "cover_image": self.cover_image.url if self.cover_image else None,
+            "case_order": self.case_order,
         }
 
     @property
@@ -181,4 +188,5 @@ class Case(models.Model):
             "type": self.type_en,
             "show_on_main_page": self.show_on_main_page,
             "cover_image": self.cover_image.url if self.cover_image else None,
+            "case_order": self.case_order,
         }
