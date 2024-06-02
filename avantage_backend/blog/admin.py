@@ -1,3 +1,4 @@
+from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
 
 from avantage_backend.blog.forms import ValidateShowOnMainPageFormset
@@ -15,21 +16,19 @@ class CaseAttachmentInlineAdmin(admin.TabularInline):
 
 
 @admin.register(Article)
-class ArticleAdmin(admin.ModelAdmin):
+class ArticleAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = [
         "id",
         "title_ru",
-        "article_order",
     ]
 
 
 @admin.register(Case)
-class CaseAdmin(admin.ModelAdmin):
+class CaseAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = [
         "id",
         "title_ru",
         "year",
-        "case_order",
     ]
     inlines = [
         CaseAttachmentInlineAdmin,

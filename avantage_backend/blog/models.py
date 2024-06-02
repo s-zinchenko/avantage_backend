@@ -9,6 +9,7 @@ class Article(models.Model):
     class Meta:
         verbose_name = "Статья"
         verbose_name_plural = "Статьи"
+        ordering = ["article_order"]
 
     title_ru = models.CharField(
         max_length=512, verbose_name="Название статьи (Ru)"
@@ -117,6 +118,7 @@ class Case(models.Model):
     class Meta:
         verbose_name = "Кейс"
         verbose_name_plural = "Кейсы"
+        ordering = ["case_order"]
 
     class TypeRU(StrEnum):
         INTERNAL = "ВНУТРЕННИЕ КОММУНИКАЦИИ"

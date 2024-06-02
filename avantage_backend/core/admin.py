@@ -1,3 +1,4 @@
+from adminsortable2.admin import SortableAdminMixin
 from django.contrib import admin
 from solo.admin import SingletonModelAdmin
 
@@ -33,10 +34,10 @@ class GalleryAttachmentAdmin(admin.ModelAdmin):
 
 
 @admin.register(Award)
-class AwardAdmin(admin.ModelAdmin):
+class AwardAdmin(SortableAdminMixin, admin.ModelAdmin):
     list_display = (
         "title_ru",
+        "year",
         "show_on_main_page",
-        "award_order",
     )
     form = AwardFormAdmin

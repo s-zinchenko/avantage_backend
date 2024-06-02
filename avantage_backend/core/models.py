@@ -314,6 +314,7 @@ class Award(models.Model):
     class Meta:
         verbose_name = "Награда"
         verbose_name_plural = "Награды"
+        ordering = ["award_order"]
 
     year = models.PositiveIntegerField(verbose_name="Год")
     title_ru = models.CharField(max_length=256, verbose_name="Название (Ru)")
@@ -328,7 +329,8 @@ class Award(models.Model):
     )
     event_ru = models.CharField(max_length=256, verbose_name="Мероприятие")
     event_en = models.CharField(max_length=256, verbose_name="Мероприятие (En)", null=True)
-    case_link = models.CharField(max_length=1024, verbose_name="Ссылка на кейс", null=True)
+    case_link_ru = models.CharField(max_length=1024, verbose_name="Ссылка на кейс (Ru)", null=True)
+    case_link_en = models.CharField(max_length=1024, verbose_name="Ссылка на кейс (En)", null=True)
 
     attachment = models.FileField(
         verbose_name="ЗD модель награды",
@@ -354,7 +356,7 @@ class Award(models.Model):
             "attachment": self.attachment.url,
             "show_on_main_page": self.show_on_main_page,
             "award_order": self.award_order,
-            "case_link": self.case_link,
+            "case_link": self.case_link_ru,
         }
 
     @property
@@ -369,5 +371,5 @@ class Award(models.Model):
             "attachment": self.attachment.url,
             "show_on_main_page": self.show_on_main_page,
             "award_order": self.award_order,
-            "case_link": self.case_link,
+            "case_link": self.case_link_en,
         }

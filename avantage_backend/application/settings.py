@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     # "import_export",
     "tinymce",
     "corsheaders",
+    "adminsortable2",
 ]
 
 PROJECT_APPS = [
