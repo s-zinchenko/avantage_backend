@@ -328,7 +328,7 @@ class Award(models.Model):
     )
     event_ru = models.CharField(max_length=256, verbose_name="Мероприятие")
     event_en = models.CharField(max_length=256, verbose_name="Мероприятие (En)", null=True)
-    case = models.ForeignKey("blog.Case", verbose_name="Кейс", null=True, on_delete=models.CASCADE)
+    case_link = models.CharField(max_length=1024, verbose_name="Ссылка на кейс", null=True)
 
     attachment = models.FileField(
         verbose_name="ЗD модель награды",
@@ -354,7 +354,7 @@ class Award(models.Model):
             "attachment": self.attachment.url,
             "show_on_main_page": self.show_on_main_page,
             "award_order": self.award_order,
-            "case_id": self.case_id,
+            "case_link": self.case_link,
         }
 
     @property
@@ -369,5 +369,5 @@ class Award(models.Model):
             "attachment": self.attachment.url,
             "show_on_main_page": self.show_on_main_page,
             "award_order": self.award_order,
-            "case_id": self.case_id,
+            "case_link": self.case_link,
         }
