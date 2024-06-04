@@ -159,10 +159,10 @@ class Company(SingletonModel):
     @property
     def ru(self):
         return {
-            "greeting_title": self.greeting_title_ru,
-            "greeting_description": self.greeting_description_ru,
-            "about_image": self.about_image.url,
-            "about_text": self.about_text_ru,
+            "greeting_title": "self.greeting_title_ru",
+            "greeting_description": "self.greeting_description_ru",
+            "about_image": "self.about_image.url",
+            "about_text": "self.about_text_ru",
             "intro_video": self.intro_video.url,
             "interview": self.interview.url,
             "welcome_video": self.welcome_video.url,
@@ -190,10 +190,10 @@ class Company(SingletonModel):
     @property
     def en(self):
         return {
-            "greeting_title": self.greeting_title_en,
-            "greeting_description": self.greeting_description_en,
-            "about_image": self.about_image.url,
-            "about_text": self.about_text_en,
+            "greeting_title": "self.greeting_title_en",
+            "greeting_description": "self.greeting_description_en",
+            "about_image": "self.about_image.url",
+            "about_text": "self.about_text_en",
             "intro_video": self.intro_video.url,
             "interview": self.interview.url,
             "welcome_video": self.welcome_video.url,
