@@ -90,33 +90,15 @@ class Company(SingletonModel):
         verbose_name = "Компания"
 
     # основная информация
-    greeting_title_ru = models.CharField(
-        max_length=255, verbose_name="Приветственный заголовок (RU)"
-    )
-    greeting_title_en = models.CharField(
-        max_length=255, verbose_name="Приветственный заголовок (EN)"
-    )
-    greeting_description_ru = models.TextField(
-        verbose_name="Приветственное описание (RU)"
-    )
-    greeting_description_en = models.TextField(
-        verbose_name="Приветственное описание (EN)"
-    )
-    about_image = models.FileField(
-        verbose_name="Изображение о компании",
-        upload_to=upload_path,
-    )
-    about_text_ru = models.TextField(verbose_name="О компании (RU)")
-    about_text_en = models.TextField(verbose_name="О компании (EN)")
     intro_video = models.FileField(
         verbose_name="Шоурил",
         upload_to=upload_path,
     )
     interview = models.FileField(
-        verbose_name="Презентация о компании", upload_to=upload_path
+        verbose_name="Презентация о компании (Интервью)", upload_to=upload_path
     )
     welcome_video = models.FileField(
-        verbose_name="Приветственное видео", upload_to=upload_path
+        verbose_name="Приветственное видео (В кружке)", upload_to=upload_path
     )
     years_of_experience = models.PositiveIntegerField(verbose_name="Годы опыта")
     unique_scenarios = models.PositiveIntegerField(
