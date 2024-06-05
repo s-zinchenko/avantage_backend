@@ -138,7 +138,7 @@ class Case(models.Model):
     )
     year = models.CharField(verbose_name="Год проведения", null=True, max_length=32)
     customer = models.ForeignKey(
-        "blog.Customer", on_delete=models.CASCADE, verbose_name="Заказчик"
+        "blog.Customer", on_delete=models.CASCADE, verbose_name="Заказчик", null=True, blank=True
     )
     body_ru = HTMLField(verbose_name="Описание (Ru)", null=True, blank=True)
     body_en = HTMLField(verbose_name="Описание (En)", null=True, blank=True)
