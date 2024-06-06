@@ -11,7 +11,7 @@ class CooperationBid(SendEmailMixin, models.Model):
         verbose_name_plural = "Заявки на сотрудничество"
 
     email_subject: str = "Заявка на сотрудничество"
-    email_recipient = "zinchieko02@mail.ru"
+    email_recipient = "avantage@avantage-event.com"
 
     full_name = models.CharField(max_length=512, verbose_name="Полное имя")
     contact_phone = models.CharField(
@@ -29,9 +29,9 @@ class CooperationBid(SendEmailMixin, models.Model):
     @property
     def to_dict(self) -> Dict[str, str]:
         return {
-            "Полное имя": self.full_name,
-            "Контактный телефон": self.contact_phone,
-            "Электронная почта": self.email,
-            "Сфера проекта": self.project_scope,
-            "Цели и задачи проекта": self.project_goals,
+            "Полное имя:": self.full_name,
+            "Контактный телефон:": self.contact_phone,
+            "Электронная почта:": self.email,
+            "Сфера проекта:": self.project_scope,
+            "Цели и задачи проекта:": self.project_goals,
         }
